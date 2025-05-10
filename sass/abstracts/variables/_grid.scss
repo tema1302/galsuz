@@ -1,0 +1,343 @@
+.fill-height {
+  height: 100%;
+}
+
+.text-center {
+  text-align: center !important;
+}
+.text-right {
+  text-align: right !important;
+}
+.text-left {
+  text-align: left !important;
+}
+
+.m-align-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+.to-right {
+  margin-left: auto;
+}
+.to-left {
+  margin-right: auto;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+@for $i from 1 to 10 {
+  .opacity-#{$i} {
+    opacity: calc(#{$i} / 10);
+  }
+}
+
+.h-100vh {
+  height: vvh(100) !important;
+}
+
+.mh-100vh {
+  min-height: vvh(100) !important;
+}
+
+.w-33 {
+  width: 33.3333% !important;
+}
+.w-66 {
+  width: 66.6666% !important;
+}
+
+@media (max-width: map-get($map-grid-props, '-md') * 1px) {
+  .desktop {
+    display: none !important;
+  }
+
+  .invisible-mobile {
+    opacity: 0;
+    pointer-events: none;
+
+    &.active {
+      opacity: 1;
+      pointer-events: initial;
+    }
+  }
+}
+
+@media (min-width: map-get($map-grid-props, '-md') * 1px) {
+  .mobile {
+    display: none !important;
+  }
+
+  .invisible-desktop {
+    opacity: 0;
+    pointer-events: none;
+
+    &.active {
+      opacity: 1;
+      pointer-events: initial;
+    }
+  }
+}
+
+@mixin create-mq($breakpoint, $min-or-max) {
+  @if ($breakpoint == 0) {
+    @content;
+  } @else {
+    @media screen and (#{$min-or-max}-width: $breakpoint *1px) {
+      @content;
+    }
+  }
+}
+
+@mixin create-col-classes($modifier, $grid-cols, $breakpoint) {
+  @include create-mq($breakpoint, 'min') {
+    .col#{$modifier}-offset-0 {
+      margin-left: 0;
+    }
+    @for $i from 1 through $grid-cols {
+      .col#{$modifier}-#{$i} {
+        flex-basis: calc(100 / (#{$grid-cols} / #{$i}) * 1%);
+        max-width: calc(100 / (#{$grid-cols} / #{$i}) * 1%);
+      }
+      .col#{$modifier}-offset-#{$i} {
+        margin-left: calc(100 / (#{$grid-cols} / #{$i}) * 1%);
+      }
+    }
+  }
+}
+
+@mixin create-display-classes($modifier, $grid-cols, $breakpoint) {
+  @include create-mq($breakpoint, 'min') {
+    @for $w from 0 to 21 {
+      $width: $w * 5%;
+      $wc: $w * 5;
+
+      .w#{$modifier}-#{$wc} {
+        width: $width !important;
+      }
+    }
+
+    .text#{$modifier}-center {
+      text-align: center !important;
+    }
+    .text#{$modifier}-right {
+      text-align: right !important;
+    }
+    .text#{$modifier}-left {
+      text-align: left !important;
+    }
+
+    .w#{$modifier}-auto {
+      width: auto !important;
+    }
+
+    .d#{$modifier}-flex {
+      display: flex !important;
+    }
+    .d#{$modifier}-inline-flex {
+      display: inline-flex !important;
+    }
+    .d#{$modifier}-block {
+      display: block !important;
+    }
+    .d#{$modifier}-inline-block {
+      display: inline-block !important;
+    }
+    .d#{$modifier}-inline {
+      display: inline !important;
+    }
+    .d#{$modifier}-none {
+      display: none !important;
+    }
+
+    .flex#{$modifier}-wrap {
+      flex-wrap: wrap;
+    }
+
+    .flex#{$modifier}-row {
+      flex-direction: row !important;
+    }
+    .flex#{$modifier}-column {
+      flex-direction: column !important;
+    }
+    .flex#{$modifier}-row-reverse {
+      flex-direction: row-reverse !important;
+    }
+    .flex#{$modifier}-column-reverse {
+      flex-direction: column-reverse !important;
+    }
+
+    .justify#{$modifier}-start {
+      justify-content: flex-start;
+    }
+    .justify#{$modifier}-end {
+      justify-content: flex-end;
+    }
+    .justify#{$modifier}-center {
+      justify-content: center;
+    }
+    .justify#{$modifier}-between {
+      justify-content: space-between;
+    }
+    .justify#{$modifier}-around {
+      justify-content: space-around;
+    }
+
+    .align#{$modifier}-start {
+      align-items: flex-start;
+    }
+    .align#{$modifier}-end {
+      align-items: flex-end;
+    }
+    .align#{$modifier}-center {
+      align-items: center;
+    }
+    .align#{$modifier}-baseline {
+      align-items: baseline;
+    }
+    .align#{$modifier}-stretch {
+      align-items: stretch;
+    }
+
+    @for $i from 0 to 26 {
+      .gap#{$modifier}-#{$i} {
+        gap: #{$i * 2}px !important;
+      }
+      .mt#{$modifier}-#{$i} {
+        margin-top: #{$i * 2}px !important;
+      }
+      .mr#{$modifier}-#{$i} {
+        margin-right: #{$i * 2}px !important;
+      }
+      .mb#{$modifier}-#{$i} {
+        margin-bottom: #{$i * 2}px !important;
+      }
+      .ml#{$modifier}-#{$i} {
+        margin-left: #{$i * 2}px !important;
+      }
+      .mx#{$modifier}-#{$i} {
+        margin-left: #{$i * 2}px !important;
+        margin-right: #{$i * 2}px !important;
+      }
+      .my#{$modifier}-#{$i} {
+        margin-top: #{$i * 2}px !important;
+        margin-bottom: #{$i * 2}px !important;
+      }
+      .ma#{$modifier}-#{$i} {
+        margin: #{$i * 2}px !important;
+      }
+
+      .pt#{$modifier}-#{$i} {
+        padding-top: #{$i * 2}px !important;
+      }
+      .pr#{$modifier}-#{$i} {
+        padding-right: #{$i * 2}px !important;
+      }
+      .pb#{$modifier}-#{$i} {
+        padding-bottom: #{$i * 2}px !important;
+      }
+      .pl#{$modifier}-#{$i} {
+        padding-left: #{$i * 2}px !important;
+      }
+      .px#{$modifier}-#{$i} {
+        padding-left: #{$i * 2}px !important;
+        padding-right: #{$i * 2}px !important;
+      }
+      .py#{$modifier}-#{$i} {
+        padding-top: #{$i * 2}px !important;
+        padding-bottom: #{$i * 2}px !important;
+      }
+      .pa#{$modifier}-#{$i} {
+        padding: #{$i * 2}px !important;
+      }
+    }
+
+    .w#{$modifier}-33 {
+      width: 33.3333% !important;
+    }
+    .w#{$modifier}-66 {
+      width: 66.6666% !important;
+    }
+
+    .mt#{$modifier}-auto {
+      margin-top: auto !important;
+    }
+    .mb#{$modifier}-auto {
+      margin-bottom: auto !important;
+    }
+    .ml#{$modifier}-auto {
+      margin-left: auto !important;
+    }
+    .mr#{$modifier}-auto {
+      margin-right: auto !important;
+    }
+    .mx#{$modifier}-auto {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+    .my#{$modifier}-auto {
+      margin-bottom: auto !important;
+      margin-top: auto !important;
+    }
+
+    .pt#{$modifier}-auto {
+      padding-top: auto !important;
+    }
+    .pb#{$modifier}-auto {
+      padding-bottom: auto !important;
+    }
+    .pl#{$modifier}-auto {
+      padding-left: auto !important;
+    }
+    .pr#{$modifier}-auto {
+      padding-right: auto !important;
+    }
+    .px#{$modifier}-auto {
+      padding-left: auto !important;
+      padding-right: auto !important;
+    }
+    .py#{$modifier}-auto {
+      padding-bottom: auto !important;
+      padding-top: auto !important;
+    }
+  }
+}
+
+@each $modifier, $breakpoint in $map-grid-props {
+  @if ($modifier == '') {
+    $modifier: '-xs';
+  }
+  @include create-mq($breakpoint - 1, 'max') {
+    .hidden#{$modifier}-down {
+      display: none !important;
+    }
+  }
+  @include create-mq($breakpoint, 'min') {
+    .hidden#{$modifier}-up {
+      display: none !important;
+    }
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 auto;
+  margin-left: -#{$grid__padding};
+  margin-right: -#{$grid__padding};
+
+  @each $modifier, $breakpoint in $map-grid-props {
+    @include create-col-classes($modifier, $grid__cols, $breakpoint);
+  }
+
+  > [class*='col-'] {
+    padding-left: #{$grid__padding};
+    padding-right: #{$grid__padding};
+    width: 100%;
+  }
+}
+
+@each $modifier, $breakpoint in $map-grid-props {
+  @include create-display-classes($modifier, $grid__cols, $breakpoint);
+}

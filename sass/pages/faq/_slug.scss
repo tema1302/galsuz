@@ -1,0 +1,186 @@
+.page.faq {
+  h1 {
+    padding-top: 30px;
+    width: 100%;
+    @media (min-width: 768px) {
+      padding-top: 96px;
+    }
+  }
+
+  .post {
+    p,
+    h2,
+    h3,
+    h4 {
+      width: 100%;
+    }
+
+    p {
+      @extend .text-style-text-lg-normal;
+    }
+  }
+
+  .aligncenter {
+    display: block;
+    margin: 1.5rem auto;
+  }
+
+  .form {
+    padding: 30px 0;
+    @media (min-width: 768px) {
+      padding: 96px 0;
+    }
+
+    &::before {
+      position: absolute;
+      pointer-events: none;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      background-color: var(--color-gray-50);
+      content: '';
+      display: block;
+      width: 100vw;
+      height: 100%;
+    }
+
+    .block {
+      @extend .effect-style-shadow-md;
+      background: var(--color-white);
+      padding: 20px;
+      border-radius: 8px;
+      @include flex();
+      @media (min-width: 768px) {
+        padding: 64px;
+      }
+    }
+
+    .button {
+      background: var(--color-primary-500);
+      color: #fff;
+      width: 100%;
+      border: 1px solid var(--color-primary-500);
+      @include transition;
+
+      &:hover {
+        color: var(--color-primary-500);
+        background: var(--color-white);
+        border: 1px solid var(--color-gray-300);
+      }
+    }
+
+    label {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 24px;
+
+      span {
+        @extend .text-style-text-sm-medium;
+        color: var(--color-gray-900);
+        margin-bottom: 6px;
+      }
+
+      .input {
+        width: 100%;
+
+        > ymaps {
+          display: block;
+
+          > ymaps {
+            display: block;
+          }
+        }
+      }
+
+      input {
+        width: 100%;
+        height: 48px;
+        padding: 0 16px;
+        color: var(--color-gray-500);
+        @extend .text-style-text-md-normal;
+        @extend .effect-style-shadow-xs;
+        border: 1px solid var(--color-gray-300);
+        border-radius: 8px;
+      }
+
+      textarea {
+        width: 100%;
+        height: 128px;
+        padding: 16px;
+        color: var(--color-gray-500);
+        @extend .text-style-text-md-normal;
+        @extend .effect-style-shadow-xs;
+        border: 1px solid var(--color-gray-300);
+        border-radius: 8px;
+      }
+
+      input[type='checkbox'] {
+        width: 20px;
+        height: 20px;
+        -webkit-appearance: none;
+        border: none;
+        background: url(assets/images/checkbox-off.svg) no-repeat center;
+        background-size: contain;
+        padding: 0;
+        margin: 0;
+        border-radius: 7px;
+      }
+
+      input[type='checkbox']:checked {
+        background-image: url(assets/images/checkbox-on.svg);
+      }
+
+      &.cb {
+        flex-direction: row;
+        align-items: center;
+        cursor: pointer;
+
+        input {
+          margin-right: 12px;
+        }
+
+        .checkboxLabel {
+          width: 60%;
+        }
+      }
+
+      &.err {
+        .input {
+          margin-bottom: 6px;
+
+          &::after {
+            content: '';
+            display: block;
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: url(assets/images/error-icon.svg) no-repeat center;
+            background-size: contain;
+          }
+        }
+
+        input {
+          border-color: var(--color-error-300);
+        }
+
+        .err {
+          @extend .text-style-text-sm-medium;
+          color: var(--color-error-500);
+        }
+      }
+    }
+  }
+
+  @media (max-width: map-get($map-grid-props, '-sm') * 1px) {
+    .head {
+      .img {
+        height: calc(100vw - 30px);
+        margin-bottom: 30px;
+      }
+    }
+  }
+}

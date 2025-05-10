@@ -1,0 +1,545 @@
+.tarifs {
+  margin-bottom: 64px;
+
+  .modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    @include flex();
+    z-index: 10000;
+    @include transition;
+    pointer-events: none;
+    opacity: 0;
+
+    &.active {
+      opacity: 1;
+      pointer-events: initial;
+    }
+
+    .overlay {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--color-black);
+      opacity: 0.7;
+    }
+
+    .window {
+      background: var(--color-white);
+      border-radius: 16px;
+      border: 1px solid var(--color-gray-200);
+      width: auto;
+      max-width: 1260px;
+      overflow-y: auto;
+      overflow-x: hidden;
+
+      &::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+      }
+      &::-webkit-scrollbar-button {
+        width: 4px;
+        height: 4px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: var(--color-primary-500);
+        border: 0px none transparent;
+        border-radius: 2px;
+      }
+      &::-webkit-scrollbar-thumb:hover {
+        background: var(--color-primary-500);
+      }
+      &::-webkit-scrollbar-thumb:active {
+        background: var(--color-primary-500);
+      }
+      &::-webkit-scrollbar-track {
+        background: transparent;
+        border: 0px none transparent;
+        border-radius: 2px;
+      }
+      &::-webkit-scrollbar-track:hover {
+        background: transparent;
+      }
+      &::-webkit-scrollbar-track:active {
+        background: transparent;
+      }
+      &::-webkit-scrollbar-corner {
+        background: transparent;
+      }
+
+      .close {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        font-size: 2em;
+        @include flex();
+      }
+    }
+  }
+
+  .switch {
+    @include flex(row, flex-start);
+    display: inline-flex;
+    background: var(--color-gray-100);
+    color: var(--color-gray-500);
+    border-radius: 22px;
+    height: 44px;
+
+    .item {
+      @include transition;
+      height: 44px;
+      border-radius: 22px;
+      padding: 0 18px;
+      @include flex(row);
+      cursor: pointer;
+
+      .icon {
+        margin-right: 8px;
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    .active {
+      color: var(--color-white);
+      background: var(--color-primary-500);
+    }
+
+    svg path {
+      @include transition;
+      stroke: var(--color-gray-500);
+    }
+
+    .active svg path {
+      stroke: var(--color-white);
+    }
+  }
+
+  .badge {
+    color: var(--color-primary-500);
+    @include flex();
+    height: 22px;
+    padding: 0 9px;
+    border-radius: 11px;
+    background: var(--color-warning-25);
+  }
+
+  .delim {
+    width: 30px;
+    height: 1px;
+    margin: 2px 0;
+    background: var(--color-gray-200);
+  }
+
+  .summ {
+    color: var(--color-gray-900);
+  }
+
+  .conditions-text {
+    color: var(--color-gray-500);
+  }
+
+  .conditions {
+    color: var(--color-gray-900);
+  }
+
+  .info {
+    margin-bottom: 16px;
+    .icon {
+      width: 20px;
+      margin-right: 14px;
+    }
+
+    .text {
+      width: calc(100% - 34px);
+      color: var(--color-gray-500);
+    }
+  }
+
+  .allitems {
+    width: 100%;
+    overflow-x: hidden;
+    padding-bottom: 15px;
+
+    .arrow-left {
+      @include transition;
+      width: 56px;
+      height: 56px;
+      position: absolute;
+      left: 10px;
+      top: calc(50% - 28px);
+      background: url(assets/images/tarif-arrow-right.svg) no-repeat center;
+      background-size: contain;
+      transform: rotate(180deg);
+      z-index: 3;
+      cursor: pointer;
+    }
+
+    .arrow-right {
+      @include transition;
+      width: 56px;
+      height: 56px;
+      position: absolute;
+      right: 10px;
+      top: calc(50% - 28px);
+      background: url(assets/images/tarif-arrow-right.svg) no-repeat center;
+      background-size: contain;
+      z-index: 3;
+      cursor: pointer;
+    }
+
+    &::before {
+      @include transition;
+      content: '';
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 0;
+      pointer-events: none;
+      width: 25%;
+      height: 100%;
+      background: linear-gradient(
+        -90deg,
+        rgba(255, 255, 255, 0) 0%,
+        #ffffff 78.49%
+      );
+      z-index: 2;
+    }
+
+    &::after {
+      @include transition;
+      content: '';
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 0;
+      pointer-events: none;
+      width: 25%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        #ffffff 78.49%
+      );
+      z-index: 2;
+    }
+
+    &.firstEl {
+      &::before {
+        opacity: 0;
+      }
+
+      .arrow-left {
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+
+    &.lastEl {
+      &::after {
+        opacity: 0;
+      }
+
+      .arrow-right {
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+  }
+
+  .items {
+    @include transition;
+    @include flex(row, space-between);
+
+    @for $i from 1 through 150 {
+      &.length-#{$i} {
+        width: #{(320px + 32px) * $i - 32px};
+      }
+    }
+
+    @for $i from 1 through 150 {
+      &.pos-#{$i} {
+        left: #{-352px * ($i - 1)};
+      }
+    }
+
+    .item {
+      width: 320px;
+      margin-right: 32px;
+      border-radius: 16px;
+
+      &:nth-last-child(1) {
+        margin-right: 0;
+      }
+
+      &.recomend {
+        background: var(--color-primary-500);
+        color: var(--color-gray-25);
+
+        a {
+          color: var(--color-gray-25);
+        }
+
+        .top {
+          background: var(--color-primary-500);
+          border-bottom: 1px solid var(--color-primary-600);
+
+          .summ {
+            color: var(--color-gray-25);
+          }
+        }
+
+        .bottom {
+          border-top: 0;
+          background: var(--color-primary-500);
+
+          .info {
+            .text {
+              color: var(--color-gray-25);
+            }
+          }
+
+          .conditions,
+          .conditions-text {
+            color: var(--color-gray-25);
+          }
+        }
+      }
+
+      .top {
+        background: var(--color-white);
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+        border: 1px solid var(--color-gray-200);
+
+        .name {
+          font-size: 2rem;
+        }
+      }
+
+      .bottom {
+        background: var(--color-gray-25);
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+        border: 1px solid var(--color-gray-200);
+        border-top: 0px;
+      }
+    }
+  }
+
+  &.noscroll {
+    .allitems {
+      .arrow-left,
+      .arrow-right,
+      &::before,
+      &::after {
+        display: none;
+      }
+
+      .items {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100% !important;
+        gap: 32px;
+        left: 0 !important;
+
+        .item {
+          margin: 0;
+          width: 31%;
+        }
+      }
+    }
+  }
+
+  @media (max-width: map-get($map-grid-props, '-sm') * 1px) {
+    .allitems {
+      overflow-x: hidden;
+
+      .arrow-right,
+      .arrow-left,
+      &::before,
+      &::after {
+        display: none !important;
+      }
+
+      .items {
+        @for $i from 1 through 150 {
+          &.length-#{$i} {
+            width: #{100% * $i};
+          }
+          &.mpos-#{($i - 1)} {
+            margin-left: -#{100% * ($i - 1)};
+          }
+          &.pos-#{($i - 1)} {
+            left: 0;
+          }
+        }
+
+        .item {
+          // scroll-snap-align: start;
+          width: calc(100vw - 30px);
+          margin-right: 0;
+          border-radius: 16px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: map-get($map-grid-props, '-sm') * 1px) {
+  .tarifs.noscroll {
+    .allitems {
+      .items {
+        .item {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.ymap-container {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  border: 1px solid var(--color-gray-200);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.form {
+  padding: 30px 0;
+  @media (min-width: 768px) {
+    padding: 0;
+  }
+
+  .button {
+    background: var(--color-primary-500);
+    color: #fff;
+    width: 100%;
+    border: 1px solid var(--color-primary-500);
+    @include transition;
+
+    &:hover {
+      color: var(--color-primary-500);
+      background: var(--color-white);
+      border: 1px solid var(--color-gray-300);
+    }
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+
+    span {
+      @extend .text-style-text-sm-medium;
+      color: var(--color-gray-900);
+      margin-bottom: 6px;
+    }
+
+    .input {
+      width: 100%;
+
+      > ymaps {
+        display: block;
+
+        > ymaps {
+          display: block;
+        }
+      }
+    }
+
+    input, select {
+      width: 100%;
+      height: 48px;
+      padding: 0 16px;
+      color: var(--color-gray-500);
+      @extend .text-style-text-md-normal;
+      @extend .effect-style-shadow-xs;
+      outline: 1px solid var(--color-gray-300) !important;
+      border: 0;
+      border-radius: 8px;
+    }
+
+    select {
+      border-right: 16px solid transparent;
+    }
+
+    textarea {
+      width: 100%;
+      height: 128px;
+      padding: 16px;
+      color: var(--color-gray-500);
+      @extend .text-style-text-md-normal;
+      @extend .effect-style-shadow-xs;
+      border: 1px solid var(--color-gray-300);
+      border-radius: 8px;
+    }
+
+    input[type='checkbox'] {
+      width: 20px;
+      height: 20px;
+      -webkit-appearance: none;
+      border: none;
+      background: url(/assets/images/checkbox-off.svg) no-repeat center;
+      background-size: contain;
+      padding: 0;
+      margin: 0;
+      border-radius: 7px;
+    }
+
+    input[type='checkbox']:checked {
+      background-image: url(/assets/images/checkbox-on.svg);
+    }
+
+    &.cb {
+      flex-direction: row;
+      align-items: center;
+      cursor: pointer;
+
+      input {
+        margin-right: 12px;
+      }
+
+      .checkboxLabel {
+        width: 60%;
+      }
+    }
+
+    &.err {
+      .input {
+        margin-bottom: 6px;
+
+        &::after {
+          content: '';
+          display: block;
+          width: 16px;
+          height: 16px;
+          position: absolute;
+          right: 16px;
+          top: 50%;
+          transform: translateY(-50%);
+          background: url(/assets/images/error-icon.svg) no-repeat center;
+          background-size: contain;
+        }
+      }
+
+      input {
+        border-color: var(--color-error-300);
+      }
+
+      .err {
+        @extend .text-style-text-sm-medium;
+        color: var(--color-error-500);
+      }
+    }
+  }
+}

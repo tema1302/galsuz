@@ -1,0 +1,114 @@
+.page {
+  padding-bottom: 96px;
+
+  h1 {
+    padding-top: 30px;
+    width: 100%;
+    @media (min-width: 768px) {
+      padding-top: 96px;
+    }
+  }
+
+  .post {
+    p,
+    h2,
+    h3,
+    h4 {
+      width: 100%;
+    }
+
+    p {
+      @extend .text-style-text-lg-normal;
+    }
+  }
+
+  .pager {
+    border-top: 1px solid var(--color-gray-200);
+    padding-top: 20px;
+    @include flex(row);
+    margin-bottom: 30px;
+    @media (min-width: 768px) {
+      margin-bottom: 96px;
+    }
+
+    .screen-reader-text {
+      display: none;
+    }
+
+    .hidden {
+      opacity: 0 !important;
+      pointer-events: none;
+    }
+
+    .nav-links {
+      @include flex(row);
+      width: 100%;
+
+      .page-numbers {
+        margin: 0 1px;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        border-radius: 8px;
+        color: var(--color-gray-500);
+        @include flex();
+
+        &.current, &:hover {
+          background: var(--color-primary-50);
+          color: var(--color-primary-500);
+        }
+
+        &.prev {
+          cursor: pointer;
+          @include flex(row);
+          color: var(--color-primary-500);
+          width: auto;
+          margin-right: 20px;
+          padding: 0 20px;
+
+          &::before {
+            content: '';
+            display: block;
+            width: 12px;
+            height: 12px;
+            background: url(assets/images/arrow-right-primary.svg) no-repeat center;
+            background-size: contain;
+            transform: rotate(180deg);
+            margin-right: 13px;
+          }
+        }
+
+        &.next {
+          cursor: pointer;
+          @include flex(row);
+          color: var(--color-primary-500);
+          width: auto;
+          margin-left: 20px;
+          padding: 0 20px;
+
+          &::after {
+            content: '';
+            display: block;
+            width: 12px;
+            height: 12px;
+            background: url(assets/images/arrow-right-primary.svg) no-repeat center;
+            background-size: contain;
+            margin-left: 13px;
+          }
+        }
+      }
+    }
+
+  }
+}
+
+body.page {
+  padding-bottom: 0;
+}
+
+@import 'index';
+@import 'alerts/index';
+@import 'events/index';
+@import 'faq/index';
+@import 'specials/index';
+@import 'tarifs/index';

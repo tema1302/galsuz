@@ -1,0 +1,389 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: galsUz\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-18 06:30+0000\n"
+"PO-Revision-Date: 2025-04-10 12:13+0000\n"
+"Last-Translator: sergelisky\n"
+"Language-Team: Uzbek\n"
+"Language: uz_UZ\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.7.2; wp-6.7.2\n"
+"X-Domain: galsuz"
+
+#. used between list items, there is a space after the comma
+#: inc/template-tags.php:63
+msgid ", "
+msgstr ", "
+
+#: functions.php:174
+msgid "Add widgets here."
+msgstr "Vidjetlarlarni shu yerda qo‘shing."
+
+#: comments.php:68
+msgid "Comments are closed."
+msgstr "Fikr bildirish yopilgan."
+
+#. 1: comment count number, 2: title.
+#: comments.php:41
+#, php-format
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "&ldquo;%2$s&rdquo dan %1$s bo‘yicha fikr;"
+msgstr[1] "&ldquo;%2$s&rdquo dan %1$s bo‘yicha fikrlar;"
+
+#: header.php:54 shortcodes/form.php:22 shortcodes/tarifs.php:86
+msgid "Cлишком короткий номер"
+msgstr "Raqam juda qisqa"
+
+#. %s: Name of current post. Only visible to screen readers
+#: inc/template-tags.php:100
+#, php-format
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr "<span class=\"screen-reader-text\">%s</span> tahrirlash"
+
+#: header.php:49 shortcodes/form.php:16 shortcodes/tarifs.php:81
+msgid "Email"
+msgstr "Email"
+
+#: functions.php:60
+msgid "Footer"
+msgstr "Futer"
+
+#. Description of the theme
+msgid "Gals.uz theme"
+msgstr "Gals.uz temasi"
+
+#. Name of the theme
+msgid "galsUz"
+msgstr "galsUz"
+
+#. Name of the template
+#: home.php:2
+msgid "Home"
+msgstr "Asosiy"
+
+#. URI of the theme
+msgid "http://underscores.me/"
+msgstr "http://underscores.me/"
+
+#. Author URI of the theme
+msgid "https://2im.ru/"
+msgstr "https://2im.ru/"
+
+#. %s: post title
+#: inc/template-tags.php:83
+#, php-format
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr "<span class=\"screen-reader-text\"> %s da </span>izoh qoldirish"
+
+#. used between list items, there is a space after the comma
+#: inc/template-tags.php:70
+msgctxt "list item separator"
+msgid ", "
+msgstr ", "
+
+#: functions.php:58
+msgid "Main menu"
+msgstr "Asosiy menyu"
+
+#: functions.php:59
+msgid "Main second"
+msgstr "Ikkilamchi asosiy"
+
+#. Author of the theme
+msgid "mByte"
+msgstr "mByte"
+
+#. 1: title.
+#: comments.php:35
+#, php-format
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr "&ldquo;%1$s&rdquo; bo‘yicha bir fikr"
+
+#. %s: post author.
+#: inc/template-tags.php:46
+#, php-format
+msgctxt "post author"
+msgid "by %s"
+msgstr "%s dan"
+
+#. %s: post date.
+#: inc/template-tags.php:30
+#, php-format
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr "%s da joylandi"
+
+#. 1: list of categories.
+#: inc/template-tags.php:66
+#, php-format
+msgid "Posted in %1$s"
+msgstr "%1$s da joylandi"
+
+#. %s: search query.
+#: search.php:21
+#, php-format
+msgid "Search Results for: %s"
+msgstr "%s uchun qidiruv natijalari:"
+
+#: functions.php:172
+msgid "Sidebar"
+msgstr "Yon panel"
+
+#. 1: list of tags.
+#: inc/template-tags.php:73
+#, php-format
+msgid "Tagged %1$s"
+msgstr "%1$s yorliqlangan"
+
+#: header.php:61 shortcodes/form.php:29 shortcodes/tarifs.php:93
+msgid "Адрес подключения"
+msgstr "Ulanish manzili"
+
+#: shortcodes/specials.php:26
+msgid "Архив предложений"
+msgstr "Takliflar arxivi"
+
+#: header.php:68 shortcodes/tarifs.php:100
+msgid "Архивные тарифы"
+msgstr "Arxiv tariflar"
+
+#: archive-events.php:15
+msgid "Блог"
+msgstr "Blog"
+
+#: header.php:48 shortcodes/form.php:15 shortcodes/tarifs.php:80
+msgid "Ваше имя"
+msgstr "Ismingiz"
+
+#: header.php:57 shortcodes/form.php:25 shortcodes/tarifs.php:89
+msgid "Ваше письмо отправлено, спасибо."
+msgstr "Tashakkur, sizning murojaatingiz qabul qilindi."
+
+#: archive-special.php:15
+msgid "Все акции и предложения"
+msgstr "Barcha aksiya va takliflar"
+
+#: footer.php:67
+msgid "Все права защищены."
+msgstr "Barcha huquqlar himoyalangan."
+
+#: shortcodes/events.php:26 shortcodes/alerts.php:26
+msgid "Все события"
+msgstr "Barcha tadbirlar"
+
+#: shortcodes/form.php:6 shortcodes/tarifs.php:71
+msgid "Все тарифы"
+msgstr "Barcha tariflar"
+
+#: header.php:65 shortcodes/form.php:33 shortcodes/tarifs.php:97
+msgid "Выбрать"
+msgstr "Tanlash"
+
+#: header.php:330
+msgid "Главная"
+msgstr "Asosiy"
+
+#: header.php:59 shortcodes/form.php:27 shortcodes/tarifs.php:91
+msgid "Давайте<br /> подключаться"
+msgstr "Keling, ulanamiz"
+
+#: archive-alerts.php:39 archive-events.php:42 archive-special.php:42
+#: archive.php:42
+msgid "Далее"
+msgstr "Keyingi"
+
+#: header.php:51 shortcodes/form.php:18 shortcodes/tarifs.php:83
+msgid "Дополнительная информация"
+msgstr "Qo‘shimcha ma’lumot"
+
+#: header.php:166 header.php:295
+msgid "Игровой портал"
+msgstr "O‘yin portali"
+
+#: header.php:164 header.php:293
+msgid "Игры и приложения для Android"
+msgstr "Android uchun o‘yin va ilovalar"
+
+#: 404.php:26
+msgid "Извините, страница, которую вы попытались открыть, не существует."
+msgstr "Kechirasiz, siz ochmoqchi bo‘lgan sahifa mavjud emas."
+
+#: shortcodes/form.php:4 shortcodes/tarifs.php:69
+msgid "Интернет"
+msgstr "Internet"
+
+#: template-parts/content-vacancies.php:16
+msgid "Ищем людей в команду Gals Telecom"
+msgstr "Gals Telecom jamoasiga odam qidiryapmiz"
+
+#: header.php:161 header.php:290
+msgid "Каталог фильмов на портале"
+msgstr "Filmlar katalogi portali"
+
+#: header.php:50 shortcodes/form.php:17 shortcodes/tarifs.php:82
+msgid "Контактный телефон"
+msgstr "Aloqa telefoni"
+
+#: header.php:212 header.php:245
+msgid "Личный кабинет"
+msgstr "Shaxsiy kabinet"
+
+#: header.php:63 shortcodes/form.php:31 shortcodes/tarifs.php:95
+msgid "Массив"
+msgstr "Daha"
+
+#: header.php:162 header.php:291
+msgid "Музыкальный архив"
+msgstr "Musiqa arxivi"
+
+#: archive-alerts.php:38 archive-events.php:41 archive-special.php:41
+#: archive.php:41
+msgid "Назад"
+msgstr "Ortga"
+
+#: header.php:46 shortcodes/form.php:13 shortcodes/tarifs.php:78
+msgid "Напишите нам"
+msgstr "Bizga xabar yuboring"
+
+#: archive-vacancies.php:16 template-parts/content-vacancies.php:14
+msgid "Наши вакансии"
+msgstr "Bo‘sh ish o‘rinlarimiz"
+
+#: header.php:47 shortcodes/form.php:14 shortcodes/tarifs.php:79
+msgid "Наши менеджеры свяжутся <br />с Вами в ближайшее время"
+msgstr "Menejerlarimiz tez orada <br />siz bilan bog‘lanishadi"
+
+#: header.php:60 shortcodes/form.php:28 shortcodes/tarifs.php:92
+msgid "Наши менеджеры свяжутся с Вами в ближайшее время"
+msgstr "Menejerlarimiz tez orada siz bilan bog‘lanishadi"
+
+#: header.php:67 shortcodes/form.php:35 shortcodes/tarifs.php:99
+msgid "Не выбран массив"
+msgstr "Daha tanlanmagan"
+
+#: header.php:66 shortcodes/form.php:34 shortcodes/tarifs.php:98
+msgid "Не выбран район"
+msgstr "Tuman tanlanmagan"
+
+#: header.php:56 shortcodes/form.php:24 shortcodes/tarifs.php:88
+msgid "Неверный адрес email"
+msgstr "Email manzili xato"
+
+#: header.php:55 shortcodes/form.php:23 shortcodes/tarifs.php:87
+msgid "Неверный формат имени"
+msgstr "Ism formati xato"
+
+#: 404.php:20 404.php:21
+msgid "Ничего не найдено"
+msgstr "Hech narsa topilmadi"
+
+#: header.php:64 shortcodes/form.php:32 shortcodes/tarifs.php:96
+msgid "Номер дома и квартиры"
+msgstr "Uy va xonadon raqami"
+
+#: shortcodes/payments.php:33
+msgid "Оплата услуг"
+msgstr ""
+
+#: shortcodes/payments.php:34
+msgid "Оплачивайте услуги интернета, любым удобным для вас способом"
+msgstr ""
+
+#: shortcodes/form.php:21
+msgid "Отправить"
+msgstr "Jo‘natish"
+
+#: archive-faq.php:69
+msgid "Перейти"
+msgstr "O‘tish"
+
+#: header.php:58 shortcodes/form.php:26 shortcodes/tarifs.php:90
+msgid "Письмо не отправлено."
+msgstr "Xat yuborilmadi."
+
+#: header.php:103 shortcodes/form.php:10 shortcodes/tarifs.php:75
+msgid "Подключить"
+msgstr "Ulash"
+
+#: header.php:53 shortcodes/form.php:20 shortcodes/tarifs.php:85
+msgid "Подключиться"
+msgstr "Ulanish"
+
+#: header.php:223 archive-vacancies.php:90
+msgid "Подробнее"
+msgstr "Batafsil"
+
+#: shortcodes/form.php:11 shortcodes/tarifs.php:76
+msgid "Подробнее о тарифе."
+msgstr "Tarif haqida batafsil."
+
+#: archive-alerts.php:15
+msgid "Пресс-центр"
+msgstr "Press-markaz"
+
+#: shortcodes/accordeon.php:56
+msgid "Развернуть все"
+msgstr "Barchasini ochish"
+
+#: header.php:62 shortcodes/form.php:30 shortcodes/tarifs.php:94
+msgid "Район"
+msgstr "Tuman"
+
+#: shortcodes/form.php:7 shortcodes/tarifs.php:72
+msgid "Рекомендуем"
+msgstr "Tavsiya etamiz"
+
+#: archive-alerts.php:16 shortcodes/events.php:24 shortcodes/alerts.php:24
+msgid "События и новости компании"
+msgstr "Kompaniya yangiliklari va tadbirlari"
+
+#: header.php:163 header.php:292
+msgid "Софт, книги и прочее"
+msgstr "Soft, kitob va boshqalar"
+
+#: shortcodes/specials.php:24
+msgid "Специальные предложения"
+msgstr "Maxsus takliflar"
+
+#: shortcodes/payments.php:41
+msgid "Способы оплаты"
+msgstr ""
+
+#: archive-tarif.php:15
+msgid "Тарифы"
+msgstr ""
+
+#: shortcodes/form.php:12 shortcodes/tarifs.php:77
+msgid "Условия"
+msgstr "Shartlar"
+
+#: archive-faq.php:16
+msgid "Центр помощи и поддержки"
+msgstr "Qo‘llab-quvvatlash markazi"
+
+#: shortcodes/form.php:5 shortcodes/tarifs.php:70
+msgid "Цифровое ТВ"
+msgstr "Raqamli TV"
+
+#: header.php:165 header.php:294
+msgid "Цифровое телевидение"
+msgstr "Raqamli televideniye"
+
+#: header.php:52 shortcodes/form.php:19 shortcodes/tarifs.php:84
+msgid "Я принимаю условия обработки персональных данных"
+msgstr "Shaxsiy ma’lumotlarni qayta ishlash shartlarini qabul qilaman"
+
+#: shortcodes/form.php:9 shortcodes/tarifs.php:74
+msgid "мес."
+msgstr "oy"
+
+#: shortcodes/form.php:8 shortcodes/tarifs.php:73
+msgid "сум"
+msgstr "so‘m"
