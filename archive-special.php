@@ -24,7 +24,7 @@ get_header();
 					?>
 						<div class="col-12 <?php echo $counter < 3 ? 'col-md-6 mb-15 mb-md-25 pb-md-7' : 'col-md-4 mb-15 mb-md-24'; ?>">
 							<div class="special">
-								<div class="img mb-16" style="background-image: url('<?php echo $image; ?>');"></div>
+								<div class="img mb-16 lazy-bg" data-bg="<?php echo esc_url($image); ?>"></div>
 								<div class="date text-style-text-sm-semibold color-gray-400 mb-6"><?php echo get_the_date('d F Y'); ?></div>
 								<a class="title d-flex justify-between align-center mb-6" href="<?php the_permalink(); ?>">
 									<div class="text-style-display-xs-semibold color-gray-900"><?php the_title(); ?></div>

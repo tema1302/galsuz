@@ -54,11 +54,11 @@ add_shortcode("payments", function ($atts, $content = '') {
           </div>
         </div>
         <div class="col-12 col-md-7 d-flex align-end justify-end" v-if="payments.length > 0">
-          <img class="w-100" v-show="activeCat !== 20 && activeCat !== 113" src="'.get_template_directory_uri().'/assets/images/payments-online.jpg"/>
+          <img loading="lazy" alt="payments-online" class="w-100" v-show="activeCat !== 20 && activeCat !== 113" src="'.get_template_directory_uri().'/assets/images/payments-online.jpg"/>
           <y-map :location="location"  v-show="activeCat === 20 || activeCat === 113">
             <y-map-default-scheme-layer></y-map-default-scheme-layer>
             <y-map-default-features-layer></y-map-default-features-layer>
-            <y-map-marker v-if="marker" :coordinates="marker"><img class="ymap-marker" src="'.get_template_directory_uri().'/assets/images/map-pin.png" /></y-map-marker>
+            <y-map-marker v-if="marker" :coordinates="marker"><img loading="lazy" alt="map-pin" class="ymap-marker" src="'.get_template_directory_uri().'/assets/images/map-pin.png" /></y-map-marker>
           </y-map>
         </div>
       </div>

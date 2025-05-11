@@ -127,7 +127,7 @@
         webvisor:true
    });
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/99647682" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<noscript><div><img loading="lazy" src="https://mc.yandex.ru/watch/99647682" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 <?php wp_body_open(); ?>
 <script>
@@ -139,9 +139,9 @@
       <div class="d-flex align-center w-100"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-current="page" class="logo mr-md-20 mr-5 nuxt-link-exact-active nuxt-link-active"><?php bloginfo( 'name' ); ?></a>
         <div class="button button-xl button-primary d-md-none mr-5 px-5" @click="popup = true"><?=esc_html__('Подключить', 'galsuz')?></div>
 
-        <a href="tel:(+998 71) 202-96-66" class="text-style-display-xs-normal d-flex d-md-none align-center phone ml-auto"><img
+        <a href="tel:(+998 71) 202-96-66" class="text-style-display-xs-normal d-flex d-md-none align-center phone ml-auto"><img loading="lazy" alt="icon"
           src="<?php echo get_template_directory_uri(); ?>/assets/images/call.svg"></a>
-        <a href="https://t.me/GalsTelecomBot" class="text-style-display-xs-normal d-flex d-md-none align-center phone ml-5" target="_blank"><img
+        <a href="https://t.me/GalsTelecomBot" class="text-style-display-xs-normal d-flex d-md-none align-center phone ml-5" target="_blank"><img loading="lazy" alt="icon"
           src="<?php echo get_template_directory_uri(); ?>/assets/images/tg-orange.svg"></a>
         <div class="burger d-md-none ml-10" @click="mobile = !mobile" :class="{ active: mobile }"><span></span><span></span><span></span></div>
         <?php
@@ -158,7 +158,7 @@
         ?>
 
         <div class="langs d-md-flex d-none align-center ml-auto"><a href="tel:(+998 71) 202-96-66"
-            class="text-style-display-xs-normal d-flex align-center phone"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/call.svg"
+            class="text-style-display-xs-normal d-flex align-center phone"><img loading="lazy" alt="icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/call.svg"
               class="mr-4">(+998 71) 202-96-66</a>
           <span class="ml-8 gray-400">|</span>
           <?php
@@ -232,7 +232,7 @@
               foreach($menu_item->children as $key => $submenu_item) {
                 $menu .= '
                 <a href="'.$submenu_item->url.'" class="col-md-6 col-12 item">
-                  <div class="mb-4 pa-6 d-flex align-start"><img src="' . $imgSubMenu[$submenu_item->url] . '" class="icon">
+                  <div class="mb-4 pa-6 d-flex align-start"><img loading="lazy" alt="icon" src="' . $imgSubMenu[$submenu_item->url] . '" class="icon">
                     <div class="ml-6">
                       <div class="title">' . $submenu_item->title . '</div>
                       <div class="subtitle text-style-text-sm-normal">' . $subtitleSubMenu[$submenu_item->url] . '</div>
@@ -299,7 +299,7 @@
         </div>
       </div>
       <div class="d-flex align-center justify-between">
-        <a href="tel:(+998 71) 202-96-66" class="text-style-display-xs-normal d-flex align-center phone my-5"><img
+        <a href="tel:(+998 71) 202-96-66" class="text-style-display-xs-normal d-flex align-center phone my-5"><img loading="lazy"
             src="<?php echo get_template_directory_uri(); ?>/assets/images/call.svg" class="mr-4">(+998 71) 202-96-66</a>
         <span class="gray-400">|</span>
         <a class="lang <?=get_locale() == 'uz_UZ' ? 'active' : ''?>" href="<?=$uz_url?>">UZ</a>
@@ -367,7 +367,7 @@
               foreach($menu_item->children as $key => $submenu_item) {
                 $menu .= '
                 <a href="'.$submenu_item->url.'" class="col-md-6 col-12 item">
-                  <div class="mb-4 pa-6 d-flex align-start"><img src="' . $imgSubMenu[$submenu_item->url] . '" class="icon">
+                  <div class="mb-4 pa-6 d-flex align-start"><img loading="lazy" alt="icon" src="' . $imgSubMenu[$submenu_item->url] . '" class="icon">
                     <div class="ml-6">
                       <div class="title">' . $submenu_item->title . '</div>
                       <div class="subtitle text-style-text-sm-normal">' . $subtitleSubMenu[$submenu_item->url] . '</div>
@@ -396,7 +396,18 @@
     </div>
   </div>
 </header>
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+998712029666",
+    "contactType": "customer service",
+    "areaServed": "UZ",
+    "availableLanguage": ["Uzbek", "Russian"]
+  }
+}
+</script>
 <?php
 /*
   <div id="page" class="site">

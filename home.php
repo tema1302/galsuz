@@ -18,6 +18,8 @@ get_header();
 
 	<main id="primary" class="frontPage">
 		<div class="container">
+			<div id="slider-skeleton" style="height: 400px; background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); background-size: 200% 100%; animation: skeleton-loading 1.5s infinite;">
+</div>
 			<?php 
 			$code = get_locale() === 'ru_RU' ? '1033' : '1323';
 			$banner = get_locale() === 'ru_RU' ? '1304' : '1439';

@@ -260,7 +260,7 @@
     <y-map :location="location" @click="mapClick">
       <y-map-default-scheme-layer></y-map-default-scheme-layer>
       <y-map-default-features-layer></y-map-default-features-layer>
-      <y-map-marker v-if="marker" :coordinates="marker"><img class="ymap-marker" src="'.get_template_directory_uri().'/assets/images/map-pin.png" /></y-map-marker>
+      <y-map-marker v-if="marker" :coordinates="marker"><img loading="lazy" alt="icon" class="ymap-marker" src="'.get_template_directory_uri().'/assets/images/map-pin.png" /></y-map-marker>
     </y-map>
   </div>
 </div>

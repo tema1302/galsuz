@@ -65,13 +65,52 @@
 		<div class="container">
 			<div class="d-flex align-center justify-between">
 				<div class="text-style-text-md-normal">© <?php echo date('Y'); ?> Gals Telecom. <?=esc_html__('Все права защищены.', 'galsuz')?></div>
-				<div class="d-flex align-center"><a href="https://t.me/galstelecom" class="social"><img decoding="async" src="<?php echo get_template_directory_uri(); ?>/assets/images/tg.svg"></a><br>
-					<a href="https://www.facebook.com/GalsTelecom/" class="social"><img decoding="async" src="<?php echo get_template_directory_uri(); ?>/assets/images/social/fb.svg"></a><br>
-					<a href="https://www.instagram.com/galstelecom/" class="social"><img decoding="async" src="<?php echo get_template_directory_uri(); ?>/assets/images/insta.svg"></a>
+				<div class="d-flex align-center"><a href="https://t.me/galstelecom" class="social"><img loading="lazy" alt="icon" decoding="async" src="<?php echo get_template_directory_uri(); ?>/assets/images/tg.svg"></a><br>
+					<a href="https://www.facebook.com/GalsTelecom/" class="social"><img loading="lazy" alt="icon" decoding="async" src="<?php echo get_template_directory_uri(); ?>/assets/images/social/fb.svg"></a><br>
+					<a href="https://www.instagram.com/galstelecom/" class="social"><img loading="lazy" alt="icon" decoding="async" src="<?php echo get_template_directory_uri(); ?>/assets/images/insta.svg"></a>
 				</div>
 			</div>
 		</div>
 	</div>
+
+	<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const lazyBackgrounds = document.querySelectorAll(".lazy-bg")
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target
+            const bg = el.getAttribute("data-bg")
+            if (bg) el.style.backgroundImage = `url('${bg}')`
+            obs.unobserve(el)
+          }
+        })
+      })
+
+      lazyBackgrounds.forEach(el => observer.observe(el))
+    } else {
+      // fallback
+      lazyBackgrounds.forEach(el => {
+        const bg = el.getAttribute("data-bg")
+        if (bg) el.style.backgroundImage = `url('${bg}')`
+      })
+    }
+
+		const slider = document.querySelector('.owl-carousel.sa_owl_theme');
+    const skeleton = document.getElementById('slider-skeleton');
+
+    const observer = new MutationObserver(() => {
+      if (slider && slider.offsetHeight > 0) {
+        skeleton.style.display = 'none';
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+  })
+</script>
 </footer>
 
 <?php wp_footer(); ?>

@@ -21,7 +21,7 @@
 		<div class="date color-primary-500 text-style-text-md-semibold mb-6 pt-6"><?php echo get_the_date('l, d F Y'); ?></div>
 		<h1 class="d-none d-md-block text-style-display-lg-semibold color-gray-900 text-center mb-20"><?php the_title(); ?></h1>
 		<h1 class="d-md-none text-style-display-md-semibold color-gray-900 text-center mb-20"><?php the_title(); ?></h1>
-		<?php if ($image) { ?><div class="img" style="background-image: url(<?php echo $image[0]; ?>);"></div> <?php } ?>
+		<?php if ($image) { ?><div class="img lazy-bg" data-bg="<?php echo esc_url($image[0]); ?>"></div> <?php } ?>
 	</div>
 
 	<article id="post-<?php the_ID(); ?>"  class="w-100 d-flex flex-column align-center">

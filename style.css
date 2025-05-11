@@ -14562,6 +14562,7 @@ body.page {
 	.frontPage .events,
 	.frontPage .specials {
 		padding-bottom: 0;
+		max-width: 430px;
 	}
 }
 
@@ -15610,5 +15611,12 @@ body.page {
 .page.tarif .form label.err .err {
 	color: var(--color-error-500);
 }
-
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
 /*# sourceMappingURL=style.css.map */

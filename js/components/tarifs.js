@@ -510,7 +510,7 @@
               </div>
             </div>
             <div class="bottom pa-16">
-              <div class="info d-flex align-start" v-for="(info, infoidx) in item.items" :key="infoidx"><img class="icon" :src="item.fields.recomend ? info.icon.replace('.svg', '-light.svg') : info.icon"/>
+              <div class="info d-flex align-start" v-for="(info, infoidx) in item.items" :key="infoidx"><img loading="lazy" alt="icon" class="icon" :src="item.fields.recomend ? info.icon.replace('.svg', '-light.svg') : info.icon"/>
                 <div class="text" v-html="info.text"></div>
               </div>
               <div class="conditions pt-4 text-style-text-sm-semibold mb-2">{{ tarifsLang['tarifs-9'] }}</div>
@@ -542,7 +542,7 @@
               </div>
             </div>
             <div class="bottom pa-16">
-              <div class="info d-flex align-start" v-for="(info, infoidx) in item.items" :key="infoidx"><img class="icon" :src="item.fields.recomend ? info.icon.replace('.svg', '-light.svg') : info.icon"/>
+              <div class="info d-flex align-start" v-for="(info, infoidx) in item.items" :key="infoidx"><img loading="lazy" alt="icon" class="icon" :src="item.fields.recomend ? info.icon.replace('.svg', '-light.svg') : info.icon"/>
                 <div class="text" v-html="info.text"></div>
               </div>
               <div class="conditions pt-4 text-style-text-sm-semibold mb-2">{{ tarifsLang['tarifs-9'] }}</div>

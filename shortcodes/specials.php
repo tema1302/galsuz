@@ -51,7 +51,7 @@ add_shortcode("specials", function ($atts, $content = '') {
     $html .= '
       <a class="special col-12 mb-20 mb-md-0 ' . $class . '" href="' . get_permalink($post->ID) . '">
         <div class="' . $subclass . '">
-          <div class="img mb-16" style="background-image : url(' . $image . ')"></div>
+          <div class="img mb-16 lazy-bg" data-bg="' . $image . '"></div>
         </div>
         <div class="' . $sub2class . '">
           <div class="title d-flex justify-between align-center mb-6">

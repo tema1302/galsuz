@@ -257,6 +257,12 @@ add_filter('the_title', function($title) {
 		return str_replace('_uz', '', $title);
 	}
 });
+add_filter('the_content', function($content) {
+  // loading="lazy" в <img>, если его нет
+  $content = preg_replace('/<img(?![^>]*loading=)/', '<img loading="lazy"', $content);
+
+  return $content;
+});
 
 /**
  * Implement the Custom Header feature.

@@ -32,9 +32,21 @@ const bannerComponent = {
       return style
     },
   },
-  async beforeMount() {
-    if (this.data.fields.image)
-      this.img = this.data.fields.image.url
+  mounted() {
+    const el = this.$el.querySelector('.back')
+    if (!el || !this.data.fields.image) return
+
+    this.observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        this.img = this.data.fields.image.url
+        this.observer.disconnect()
+      }
+    }, { rootMargin: '200px' }) // можно уменьшить до 0px
+
+    this.observer.observe(el)
+  },
+  beforeDestroy() {
+    if (this.observer) this.observer.disconnect()
   },
   methods: {
     hexToRgb(hex) {
@@ -50,7 +62,7 @@ const bannerComponent = {
   },
   template: `
     <div class="banner" :class="[data.fields.type, data.fields.align, data.fields.valign]">
-      <div class="back" :style="{ backgroundImage: 'url(' + img + ')'}"></div>
+      <div class="back" :style="img ? { backgroundImage: 'url(' + img + ')' } : {}"></div>
       <div class="front" :style="customColor">
         <div class="html">
           <div class="text-style-display-md-medium" :class="[data.fields.margin, { 'mb-4': !data.fields.margin }]"> {{ data.fields.title }} </div>

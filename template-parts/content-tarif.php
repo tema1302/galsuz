@@ -42,7 +42,7 @@
 						for (const item of this.post.items) {
 							subtitle += `
 							<div class="info d-flex align-start">
-								<img src="${item.icon}" class="icon" />
+								<img loading="lazy" alt="icon" src="${item.icon}" class="icon" />
 								<div class="text">${item.text}</div>
 							</div>`
 						}
