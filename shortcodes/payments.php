@@ -70,41 +70,41 @@ add_shortcode("payments", function ($atts, $content = '') {
   ';
   add_filter('the_content', 'wpautop');
   
-  return $html;
-<section itemscope itemtype="https://schema.org/ReviewAction">
-  <h2>💬 Оставьте отзыв о Gals Telecom — нам важно ваше мнение!</h2>
-  <p itemprop="description">
-    Если вы довольны качеством <strong>интернета в Ташкенте</strong> от <span itemprop="agent" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">Gals Telecom</span></span>,
-    поделитесь этим! Ваш отзыв поможет нам стать лучше и поможет другим пользователям сделать правильный выбор. Положительный отзыв — это не просто благодарность. Это вклад в развитие интернет провайдеров. Чем больше хороших отзывов, тем больше клиентов узнают о честном и быстром интернете в Ташкенте.
+  $html .= '<section itemscope itemtype="https://schema.org/ReviewAction">
+    <h2>💬 Оставьте отзыв о Gals Telecom — нам важно ваше мнение!</h2>
+    <p itemprop="description">
+      Если вы довольны качеством <strong>интернета в Ташкенте</strong> от <span itemprop="agent" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">Gals Telecom</span></span>,
+      поделитесь этим! Ваш отзыв поможет нам стать лучше и поможет другим пользователям сделать правильный выбор. Положительный отзыв — это не просто благодарность. Это вклад в развитие интернет провайдеров. Чем больше хороших отзывов, тем больше клиентов узнают о честном и быстром интернете в Ташкенте.
 
-  </p>
+    </p>
 
-  <ul class="review-links" style="display: flex; flex-wrap: wrap; gap: 20px; list-style: none; padding: 0;">
-    <li style="flex: 1 1 200px; text-align: center;">
-      <a href="https://yandex.ru/maps/org/gals_telecom/1685623947/" target="_blank" rel="noopener nofollow" itemprop="target">
-        <img src="https://yastatic.net/s3/mapsfrontend/logo/maps-logo.svg" alt="Оставить отзыв на Яндекс Картах" width="150">
-        <p>Оставьте отзыв на Яндекс Картах</p>
-      </a>
+    <ul class="review-links" style="display: flex; flex-wrap: wrap; gap: 20px; list-style: none; padding: 0;">
+      <li style="flex: 1 1 200px; text-align: center;">
+        <a href="https://yandex.ru/maps/org/gals_telecom/1685623947/" target="_blank" rel="noopener nofollow" itemprop="target">
+          <img src="https://yastatic.net/s3/mapsfrontend/logo/maps-logo.svg" alt="Оставить отзыв на Яндекс Картах" width="150">
+          <p>Оставьте отзыв на Яндекс Картах</p>
+        </a>
 
-      <div style="width:360px;height:500px;overflow:hidden;position:relative;"><iframe style="width:100%;height:100%;border:1px solid #e6e6e6;border-radius:8px;box-sizing:border-box" src="https://yandex.ru/maps-reviews-widget/1685623947?comments"></iframe><a href="https://yandex.ru/maps/org/gals_telecom/1685623947/" target="_blank" style="box-sizing:border-box;text-decoration:none;color:#b3b3b3;font-size:10px;font-family:YS Text,sans-serif;padding:0 20px;position:absolute;bottom:8px;width:100%;text-align:center;left:0;overflow:hidden;text-overflow:ellipsis;display:block;max-height:14px;white-space:nowrap;padding:0 16px;box-sizing:border-box">Gals Telecom на карте Ташкента — Яндекс Карты</a></div>
-    </li>
-    <li style="flex: 1 1 200px; text-align: center;">
-      <a href="https://go.2gis.com/18yg5" target="_blank" rel="noopener nofollow" itemprop="target">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/2GIS_logo.svg/2560px-2GIS_logo.svg.png" alt="Оставить отзыв в 2ГИС" width="150">
-        <p>Оставьте отзыв в 2ГИС</p>
-      </a>
-    </li>
+        <div style="width:360px;height:500px;overflow:hidden;position:relative;"><iframe style="width:100%;height:100%;border:1px solid #e6e6e6;border-radius:8px;box-sizing:border-box" src="https://yandex.ru/maps-reviews-widget/1685623947?comments"></iframe><a href="https://yandex.ru/maps/org/gals_telecom/1685623947/" target="_blank" style="box-sizing:border-box;text-decoration:none;color:#b3b3b3;font-size:10px;font-family:YS Text,sans-serif;padding:0 20px;position:absolute;bottom:8px;width:100%;text-align:center;left:0;overflow:hidden;text-overflow:ellipsis;display:block;max-height:14px;white-space:nowrap;padding:0 16px;box-sizing:border-box">Gals Telecom на карте Ташкента — Яндекс Карты</a></div>
+      </li>
+      <li style="flex: 1 1 200px; text-align: center;">
+        <a href="https://go.2gis.com/18yg5" target="_blank" rel="noopener nofollow" itemprop="target">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/2GIS_logo.svg/2560px-2GIS_logo.svg.png" alt="Оставить отзыв в 2ГИС" width="150">
+          <p>Оставьте отзыв в 2ГИС</p>
+        </a>
+      </li>
 
-    <li style="flex: 1 1 200px; text-align: center;">
-      <a href="https://maps.app.goo.gl/hXiGvrgQmzkG8gQw7" target="_blank" rel="noopener nofollow" itemprop="target">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Google_Maps_Logo_2020.svg/2560px-Google_Maps_Logo_2020.svg.png" alt="Оставить отзыв в Google Maps" width="150">
-        <p>Оставьте отзыв в Google Maps</p>
-      </a>
-    </li>
+      <li style="flex: 1 1 200px; text-align: center;">
+        <a href="https://maps.app.goo.gl/hXiGvrgQmzkG8gQw7" target="_blank" rel="noopener nofollow" itemprop="target">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Google_Maps_Logo_2020.svg/2560px-Google_Maps_Logo_2020.svg.png" alt="Оставить отзыв в Google Maps" width="150">
+          <p>Оставьте отзыв в Google Maps</p>
+        </a>
+      </li>
 
-  </ul>
-</section>
-
+    </ul>
+  </section>
+';
+return $html;
 
 
 });
