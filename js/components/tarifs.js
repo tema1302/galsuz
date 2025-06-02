@@ -310,10 +310,6 @@
               "price": item.fields.price,
               "category": "Интернет",
               "url": item.url,
-              "provider": {
-                "@type": "Organization",
-                "name": "Gals.uz"
-              }
             })),
             ...this.tarifsTv.map(item => ({
               "@type": "Offer",
@@ -323,10 +319,6 @@
               "price": item.fields.price,
               "category": "Кабельное ТВ",
               "url": item.url,
-              "provider": {
-                "@type": "Organization",
-                "name": "Gals.uz"
-              }
             }))
           ]
         });

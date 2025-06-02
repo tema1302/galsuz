@@ -14043,6 +14043,11 @@ footer .bottom .social {
 	flex-wrap: nowrap;
 }
 
+.row .wp-image-194 {
+	max-width: 100% !important;
+	height: auto;
+}
+
 .payments {
 	height: 500px;
 	overflow-y: auto;

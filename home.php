@@ -18,8 +18,7 @@ get_header();
 
 	<main id="primary" class="frontPage">
 		<div class="container">
-			<div id="slider-skeleton" style="height: 400px; background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); background-size: 200% 100%; animation: skeleton-loading 1.5s infinite;">
-</div>
+			<div id="slider-skeleton" style="height: 400px; border-radius: 8px; background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); background-size: 200% 100%; animation: skeleton-loading 2.5s infinite;"></div>
 			<?php 
 			$code = get_locale() === 'ru_RU' ? '1033' : '1323';
 			$banner = get_locale() === 'ru_RU' ? '1304' : '1439';
@@ -36,10 +35,86 @@ get_header();
 			<?php /* echo do_shortcode('[events]'); */ ?>
 			<?php echo do_shortcode('[slider load="'.$banner.'"]'); ?>
 			<?php echo do_shortcode('[specials]'); ?>
-			<?php echo do_shortcode('[payments]'); ?>
+			<?php echo do_shortcode('[payments]'); 
+  					echo the_content();
+			?>
+			
 			<div class="skip"></div>
 		</div>
-	</main><!-- #main -->
+	</main><!-- #main --><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://gals.uz/#internet-service",
+      "name": "Интернет в Ташкенте от Gals Telecom",
+      "provider": {
+        "@type": "Organization",
+        "name": "Gals Telecom",
+        "url": "https://gals.uz",
+        "logo": "https://gals.uz/wp-content/uploads/2022/05/logo.svg",
+        "foundingDate": "2008",
+        "sameAs": [
+          "https://t.me/gals_uz",
+          "https://www.instagram.com/gals_uz"
+        ]
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Ташкент, Узбекистан"
+      },
+      "serviceType": "Домашний и корпоративный интернет",
+      "description": "Gals Telecom предоставляет быстрый и стабильный интернет в Ташкенте для дома и бизнеса. Бесплатное подключение, IPTV, фильмы и музыка, честные тарифы без скрытых платежей.",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://gals.uz/special/",
+        "priceCurrency": "UZS",
+        "price": "от 70000",
+        "eligibleRegion": {
+          "@type": "Place",
+          "name": "Ташкент"
+        },
+        "availability": "https://schema.org/InStock"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Тарифные планы Gals Telecom",
+        "itemListElement": [
+          { 
+            "@type": "Offer",
+            "name": "Домашний интернет",
+            "description": "Интернет с высокой скоростью, IPTV и бесплатным доступом к мультимедиа",
+            "url": "https://gals.uz/tarif/"
+          },
+          {
+            "@type": "Offer",
+            "name": "Интернет для бизнеса",
+            "description": "Индивидуальные тарифы для офисов и компаний",
+            "url": "https://gals.uz/tarif/"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Пользователь Gals Telecom"
+      },
+      "reviewBody": "Самый быстрый интернет в Ташкенте, честные цены, отличная поддержка 24/7.",
+      "itemReviewed": {
+        "@id": "https://gals.uz/#internet-service"
+      }
+    }
+  ]
+}
+</script>
 
 <?php
 get_footer();

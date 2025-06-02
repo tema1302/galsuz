@@ -31,6 +31,16 @@ add_shortcode("specials", function ($atts, $content = '') {
     ';
   foreach ($posts as $key => $post) {
     $image = get_the_post_thumbnail_url($post->ID, 'large');
+    $offer_schema[] = [
+      "@type" => "Offer",
+      "name" => apply_filters('the_title', $post->post_title),
+      "description" => get_the_excerpt($post->ID),
+      "url" => get_permalink($post->ID),
+      "image" => $image,
+      "availability" => "https://schema.org/InStock",
+      "priceCurrency" => "UZS",
+      "price" => $post->fields['price'] ?? "0"
+    ];
     $class = '';
     $subclass = '';
     $sub2class = '';
@@ -62,7 +72,12 @@ add_shortcode("specials", function ($atts, $content = '') {
         </div>
       </a>';
   }
-
+  if (!empty($offer_schema)) {
+    $html .= '<script type="application/ld+json">' . json_encode([
+      "@context" => "https://schema.org",
+      "@graph" => $offer_schema
+    ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . '</script>';
+  }
   $html .= '
   </div>
   </div>

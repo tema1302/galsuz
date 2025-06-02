@@ -111,6 +111,53 @@
     observer.observe(document.body, { childList: true, subtree: true });
   })
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+998 71 202 96 66",
+      "contactType": "customer service",
+      "areaServed": {
+				"@type": "Place",
+				"name": "Tashkent",
+				"address": {
+					"@type": "PostalAddress",
+					"addressLocality": "Tashkent",
+					"addressCountry": "UZ"
+				}
+			},
+      "availableLanguage": ["Russian", "Uzbek"],
+      "contactOption": ["TollFree", "HearingImpairedSupported"]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://gals.uz/#organization",
+      "sameAs": [
+        "https://t.me/galstelecom",
+        "https://www.facebook.com/GalsTelecom/",
+        "https://www.instagram.com/galstelecom/"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+998 71 202 96 66",
+        "contactType": "customer service",
+        "areaServed": {
+					"@type": "Place",
+					"name": "Tashkent",
+					"address": {
+						"@type": "PostalAddress",
+						"addressLocality": "Tashkent",
+						"addressCountry": "UZ"
+					}
+				},
+        "availableLanguage": ["Russian", "Uzbek"]
+      }
+    }
+  ]
+}
+</script>
 </footer>
 
 <?php wp_footer(); ?>

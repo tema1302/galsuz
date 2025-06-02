@@ -44,7 +44,7 @@
     <?php
     $lang = [
       'form-1' => esc_html__('Напишите нам', 'galsuz'),
-      'form-2' => esc_html__('Наши менеджеры свяжутся <br />с Вами в ближайшее время', 'galsuz'),
+      'form-2' => esc_html__('Наши менеджеры свяжутся с Вами в ближайшее время', 'galsuz'),
       'form-3' => esc_html__('Ваше имя', 'galsuz'),
       'form-4' => esc_html__('Email', 'galsuz'),
       'form-5' => esc_html__('Контактный телефон', 'galsuz'),
@@ -56,7 +56,7 @@
       'form-11' => esc_html__('Неверный адрес email', 'galsuz'),
       'form-12' => esc_html__('Ваше письмо отправлено, спасибо.', 'galsuz'),
       'form-13' => esc_html__('Письмо не отправлено.', 'galsuz'),
-      'form-14' => esc_html__('Давайте<br /> подключаться', 'galsuz'),
+      'form-14' => esc_html__('Давайте подключаться', 'galsuz'),
       'form-15' => esc_html__('Наши менеджеры свяжутся с Вами в ближайшее время', 'galsuz'),
       'form-16' => esc_html__('Адрес подключения', 'galsuz'),
       'form-17' => esc_html__('Район', 'galsuz'),
@@ -79,7 +79,7 @@
       'tarifs-8' => esc_html__('Подробнее о тарифе.', 'galsuz'),
       'tarifs-9' => esc_html__('Условия', 'galsuz'),
       'form-1' => esc_html__('Напишите нам', 'galsuz'),
-      'form-2' => esc_html__('Наши менеджеры свяжутся <br />с Вами в ближайшее время', 'galsuz'),
+      'form-2' => esc_html__('Наши менеджеры свяжутся с Вами в ближайшее время', 'galsuz'),
       'form-3' => esc_html__('Ваше имя', 'galsuz'),
       'form-4' => esc_html__('Email', 'galsuz'),
       'form-5' => esc_html__('Контактный телефон', 'galsuz'),
@@ -92,7 +92,7 @@
       'form-11' => esc_html__('Неверный адрес email', 'galsuz'),
       'form-12' => esc_html__('Ваше письмо отправлено, спасибо.', 'galsuz'),
       'form-13' => esc_html__('Письмо не отправлено.', 'galsuz'),
-      'form-14' => esc_html__('Давайте<br /> подключаться', 'galsuz'),
+      'form-14' => esc_html__('Давайте подключаться', 'galsuz'),
       'form-15' => esc_html__('Наши менеджеры свяжутся с Вами в ближайшее время', 'galsuz'),
       'form-16' => esc_html__('Адрес подключения', 'galsuz'),
       'form-17' => esc_html__('Район', 'galsuz'),
@@ -206,6 +206,39 @@
             }
           }
 
+          // Получение айпи и проверка, показывать ли для юзеров не из этого айпи (чтобы роботы не видели несуществующие ссылки, которые ведут на 404)
+          function ipInCIDR($ip, $cidr) {
+          list($subnet, $mask) = explode('/', $cidr);
+          return (ip2long($ip) & ~((1 << (32 - $mask)) - 1)) === (ip2long($subnet) & ~((1 << (32 - $mask)) - 1));
+        }
+
+        function isAllowedIP($ip) {
+          $allowed_cidrs = [
+            '146.158.20.0/22',
+            '146.158.28.0/23',
+            '31.148.100.0/22',
+            '31.148.144.0/22',
+            '91.231.56.0/22',
+            '92.253.196.0/22',
+            '92.38.16.0/22',
+            '92.38.24.0/22',
+            '92.38.52.0/22',
+            '93.170.16.0/21',
+            '93.170.168.0/23',
+            '93.170.208.0/22',
+            '93.171.210.0/23',
+            '10.0.0.0/8'
+          ];
+
+          foreach ($allowed_cidrs as $cidr) {
+            if (ipInCIDR($ip, $cidr)) return true;
+          }
+          return false;
+        }
+
+        $user_ip = $_SERVER['REMOTE_ADDR'];
+        $canShowSubmenu = isAllowedIP($user_ip);
+
           $imgSubMenu = [
             'http://kino.gt.uz/' => get_template_directory_uri() . '/assets/images/sub-icons/video.svg',
             'http://music.gt.uz/' => get_template_directory_uri() . '/assets/images/sub-icons/music.svg',
@@ -223,6 +256,7 @@
             'http://iptv.gt.uz/'  => esc_html__('Цифровое телевидение', 'galsuz'),
             'http://game.gt.uz/'  => esc_html__('Игровой портал', 'galsuz'),
           ];
+
 
           $menu = '<ul class="menu d-flex">';
           foreach($menu_data as $key => $menu_item) {
@@ -399,6 +433,10 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://gals.uz/#organization",
+  "name": "Gals Telecom",
+  "url": "https://gals.uz",
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": "+998712029666",
